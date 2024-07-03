@@ -1,0 +1,71 @@
+---
+import ItemCard from '../components/ItemCard.astro';
+---
+
+<section class="main-carousel-container my-4">
+    <ItemCard class="item-card"/>
+    <ItemCard class="item-card"/>
+    <ItemCard class="item-card"/>
+    <ItemCard class="item-card"/>
+    <ItemCard class="item-card"/>
+</section>
+<style>
+        .main-carousel-container {
+            display: flex;
+            width: 100%;
+        
+            overflow-x: scroll;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+        }
+        
+        .main-carousel-container .item-card {
+            width: 100%;
+            object-fit: cover;
+        
+            scroll-snap-align: center;
+        }
+        
+        .main-carousel-container::-webkit-scrollbar {
+            height: 10px;
+        }
+        
+        /* Track */
+        .main-carousel-container::-webkit-scrollbar-track {
+            /* background: #f1f1f1;  */
+        }
+        
+        /* Handle */
+        .main-carousel-container::-webkit-scrollbar-thumb {
+            cursor: grab;
+        }
+        
+        /* Handle on hover */
+        .main-carousel-container::-webkit-scrollbar-thumb:hover {
+            background: #88888863; 
+        }
+        
+        .main-carousel-container::-webkit-scrollbar-thumb:horizontal {
+            border-radius: 10px;
+        }
+        
+        /* main-carousel-container on hover */
+        .main-carousel-container:hover::-webkit-scrollbar-thumb {
+            background: #8888883f;
+            cursor: grab;
+        }
+        
+        .main-carousel-container:hover::-webkit-scrollbar-thumb:hover {
+            background: #88888863 !important; 
+        }
+        
+        .main-carousel-container::-webkit-scrollbar-thumb:active {
+            cursor: grabbing;
+        }
+        
+        @media (max-width: 767.98px) { 
+            .main-carousel-container {
+                display: none; 
+            }
+        }
+</style>
